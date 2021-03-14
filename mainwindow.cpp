@@ -42,5 +42,12 @@ void MainWindow::on_connectButton_clicked()
 {
     QString device = ui->comportComboBox->currentText();
     ui->statusbar->showMessage("Connecting meter at " + device);
-    meter->connect(device);
+    bool connected = meter->connect(device);
+    if(connected){
+        ui->statusbar->showMessage("Meter connected!");
+        updateMeterTimer = new QTimer(this);
+        connect(updateMeterTimer, &QTimer::timeout, this, )
+    }else{
+        ui->statusbar->showMessage("Meter not connected!");
+    }
 }

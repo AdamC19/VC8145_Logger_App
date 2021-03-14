@@ -28,5 +28,6 @@ private slots:
 private:
     Ui::MainWindow *ui;
     VC8145 *meter;
+    QTimer *updateMeterTimer;
 };
 #endif // MAINWINDOW_H
